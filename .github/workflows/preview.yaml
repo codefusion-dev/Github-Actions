@@ -1,4 +1,4 @@
-name:Vercel Preview Workflow
+name: Vercel Preview Workflow
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -14,16 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      -name: Install Vercel CLI
+
+      - name: Install Vercel CLI
         run: npm install -g vercel
 
-      -name: Pull Vercel Environment Variables
+      - name: Pull Vercel Environment Variables
         run: vercel pull --environment=Preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      -name: Build  Project Artifact
+      - name: Build  Project Artifact
         run: vercel build Preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      -name: Deploy Preview Artifact
+      - name: Deploy Preview Artifact
         run: vercel deploy --prebuilt Preview --token=${{ secrets.VERCEL_TOKEN }}
-        
