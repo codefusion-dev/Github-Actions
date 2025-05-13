@@ -28,6 +28,7 @@ function App() {
         </div>
       </main>
       <footer className="footer">
+        
         <p>
           Powered by <a href="https://shaheershahzad.com" target="_blank" rel="noopener noreferrer">Shaheer Shahzad</a>
         </p>
